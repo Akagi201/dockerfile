@@ -10,6 +10,8 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
 
 RUN wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | zsh || true
 
+RUN chsh -s `which zsh`
+
 RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-4.0 main" >> /etc/apt/sources.list.d/llvm.list \
   && wget -O - http://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - \
   && apt-get update \
