@@ -2,7 +2,7 @@ FROM akagi201/eosbuilder
 ARG branch=master
 ARG symbol=SYS
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y zsh openssl vim psmisc python3-pip openssh-server \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y zsh openssl ca-certificates vim psmisc python3-pip openssh-server \
     && rm -rf /var/lib/apt/lists/*
 RUN pip3 install numpy
 RUN mkdir /var/run/sshd
