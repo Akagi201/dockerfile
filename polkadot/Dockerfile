@@ -16,6 +16,7 @@ RUN mkdir -p polkadot && \
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
 	export PATH=$PATH:$HOME/.cargo/bin && \
 	git clone https://github.com/paritytech/polkadot.git && \
+	cd polkadot && \
 	./init.sh && \
 	./build.sh && \
 	cargo build --$PROFILE && \
