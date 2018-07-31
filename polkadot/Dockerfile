@@ -35,7 +35,6 @@ RUN mkdir -p polkadot && \
 
 COPY --from=builder /usr/local/bin/polkadot /usr/local/bin/polkadot
 
-COPY version /polkadot
 WORKDIR /polkadot
 EXPOSE 30333 9933 9944
 VOLUME ["/data"]
