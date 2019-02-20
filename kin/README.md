@@ -30,7 +30,7 @@ Disclaimer: We are not affiliated with, or sponsored or endorsed by, the Stellar
 * `docker run --name stellar-core -d -p 11625:11625 -p 11626:11626 -v ~/kin/core:/opt/stellar -e POSTGRES_USER=stellar -e POSTGRES_PASSWORD=password -e TESTNET=1 -e CORE_DB_DSN="postgresql://dbname=coredb host=172.17.0.1:5432 user=stellar password=password sslmode=disable" akagi201/stellar-core:latest`
 
 ### stellar-horizon
-* `docker run --name stellar-horizon -d -p 8000:8000 -v ~/kin/horizon:/opt/stellar -e POSTGRES_USER=stellar -e POSTGRES_PASSWORD=password -e TESTNET=1 -e CORE_DB_DSN="postgres://stellar:password@172.17.0.1:5432/coredb?sslmode=disable" -e HORIZON_DB_DSN="postgres://stellar:password@172.17.0.1:5432/horizondb?sslmode=disable" akagi201/stellar-core:latest`
+* `docker run --name stellar-horizon -d -p 8000:8000 -v ~/kin/horizon:/opt/stellar -e POSTGRES_USER=stellar -e POSTGRES_PASSWORD=password -e TESTNET=1 -e CORE_DB_DSN="postgres://stellar:password@172.17.0.1:5432/coredb?sslmode=disable" -e HORIZON_DB_DSN="postgres://stellar:password@172.17.0.1:5432/horizondb?sslmode=disable" akagi201/stellar-horizon:latest`
 
 ## Refs
 * <https://github.com/StellarKit/stellarkit-core-horizon>
