@@ -1,0 +1,55 @@
+HTTP_PORT=11626
+PUBLIC_HTTP_PORT=true
+LOG_FILE_PATH=""
+BUCKET_DIR_PATH="${STELLAR_HOME}/buckets"
+
+DATABASE="${CORE_DB_DSN}"
+NETWORK_PASSPHRASE="Public Global Kin Ecosystem Network ; June 2018"
+CATCHUP_RECENT=10
+
+# pick your own seed
+# NODE_SEED="SC3EIXY...MZ4T2SV74USJZJPIAKOB"
+
+NODE_NAMES=[
+	"GDMXZQKYGHWPNYMAQV5MNTA5Q63BMSHKCQYNWAQHL2ZZ26UXSSY5PDB6  stellar-core-6145",
+  "GAYPVPXFIGBDXCIWOKPZDTY7D562G6P3XJIQ6JTXRD26653SFL6XICLZ  stellar-core-c5dc",
+  "GBMHDWYYF3H3CVME7BCEOGGOIJUUJP4XHJXFQMKXBMTAC6UE4EQZSUQM  stellar-core-dc14",
+  "GBRND2EC6TCTFP5GR4ASBYVDGSVY4APGAUXBDLXW624CEZWNQXNAABBB  stellar-core-4617",
+  "GCW2IL4XE4AHD6BLB7VXLU4JX5E72WOFTSVYYJ4AVANBBMXBW2IVST3A  stellar-core-2300",
+  "GBBSLULV4YKIIYRHFSOOUV234ENZAU4IRQTSVU3TRY5H6LGGVHNKXGLT  stellar-core-d491",
+  "GAUDU4VFBDL4IOX3FSA5XMVN2UV7Q7L6YPBG3WEQQB25JXWPI5IYE6US  stellar-core-02ed"
+]
+
+KNOWN_PEERS=[
+  "stellar-core-ecosystem-6145.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-c5dc.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-dc14.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-4617.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-2300.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-d491.kininfrastructure.com:11625",
+  "stellar-core-ecosystem-02ed.kininfrastructure.com:11625"
+]
+
+[QUORUM_SET]
+VALIDATORS=[
+ "$stellar-core-6145", "$stellar-core-c5dc", "$stellar-core-dc14", "$stellar-core-4617", "$stellar-core-2300", "$stellar-core-d491", "$stellar-core-02ed"
+]
+
+[HISTORY.cache]
+get="cp ${STELLAR_HOME}/history-cache/{0} {1}"
+
+# history store
+[HISTORY.stellar-core-6145]
+get="curl -sf https://s3.amazonaws.com/stellar-core-ecosystem-6145/{0} -o {1}"
+[HISTORY.stellar-core-c5dc]
+get="curl -sf https://s3.amazonaws.com/stellar-core-ecosystem-c5dc/{0} -o {1}"
+[HISTORY.stellar-core-dc14]
+get="curl -sf https://s3.us-east-2.amazonaws.com/stellar-core-ecosystem-dc14/{0} -o {1}"
+[HISTORY.stellar-core-4617]
+get="curl -sf https://s3.us-east-2.amazonaws.com/stellar-core-ecosystem-2300/{0} -o {1}"
+[HISTORY.stellar-core-2300]
+get="curl -sf https://s3.us-west-1.amazonaws.com/stellar-core-ecosystem-2300/{0} -o {1}"
+[HISTORY.stellar-core-d491]
+get="curl -sf https://s3.us-west-1.amazonaws.com/stellar-core-ecosystem-d491/{0} -o {1}"
+[HISTORY.stellar-core-02ed]
+get="curl -sf https://s3.us-west-2.amazonaws.com/stellar-core-ecosystem-02ed/{0} -o {1}"
