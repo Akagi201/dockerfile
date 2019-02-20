@@ -5,7 +5,7 @@ apt-get update
 apt-get install -y git curl mercurial
 
 # install deps
-RUN go get -u github.com/golang/dep/...
+go get -u github.com/golang/dep/...
 
 # deploy horizon binary
 mkdir -p /go/src/github.com/kinecosystem/ \
