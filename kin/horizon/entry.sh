@@ -18,7 +18,7 @@ function main() {
   build-config /configs/.pgpass > /root/.pgpass
   chmod 600 /root/.pgpass
 
-  while ! psql -h stellarpostgres -U $POSTGRES_USER -c 'select 1' horizondb &> /dev/null
+  while ! psql -h 172.17.0.1 -U $POSTGRES_USER -c 'select 1' horizondb &> /dev/null
   do
     echo "Waiting for horizondb to be available..."
     sleep 1

@@ -18,7 +18,7 @@ function main() {
   build-config /configs/.pgpass > /root/.pgpass
   chmod 600 /root/.pgpass
 
-  while ! psql -h stellarpostgres -U $POSTGRES_USER -c 'select 1' coredb &> /dev/null
+  while ! psql -h 172.17.0.1 -U $POSTGRES_USER -c 'select 1' coredb &> /dev/null
   do
     echo "Waiting for coredb to be available..."
     sleep 1
