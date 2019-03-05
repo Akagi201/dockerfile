@@ -1,6 +1,6 @@
 FROM ubuntu:latest as builder
 
-ENV STELLAR_CORE_TAG kinecosystem/master
+ENV STELLAR_CORE_TAG kinecosystem-v2.0.1-stellar-v9.2.0
 
 ADD apt-build /
 RUN ["chmod", "+x", "/apt-build"]

@@ -1,6 +1,6 @@
 FROM golang:stretch as builder
 
-ENV HORIZON_TAG kinecosystem/master
+ENV HORIZON_TAG kinecosystem/horizon-v2.0.0-stellar-v0.16.1
 
 ADD install.sh /
 RUN chmod +x /install.sh
