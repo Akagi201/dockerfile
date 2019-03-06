@@ -5,4 +5,4 @@ set -e
 echo "starting horizon..."
 
 source $HORIZ_ENV
-exec horizon
+exec horizon serve
