@@ -33,7 +33,7 @@ Before setting up remote authentication, you will need to generate the rpcauth l
 Now that you have your credentials, you need to start the Bitcoin Core daemon with the `-rpcauth` option. Alternatively, you could append the line to a `bitcoin.conf` file and mount it on the container.
 
 ```
-docker run --rm --name bitcoin-core -it Akagi201/bitcoin-core \
+docker run --rm --name bitcoin-core -it akagi201/bitcoin-core \
   -printtoconsole \
   -regtest=1 \
   -rpcallowip=172.17.0.0/16 \
@@ -58,3 +58,23 @@ Two important notes:
 ### Regtest
 * JSON-RPC/REST: 18443 (since 0.16+, otherwise 18332)
 * P2P: 18444
+
+## Run
+
+### test
+
+```
+docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -regtest=1
+```
+
+### testnet
+
+```
+docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -testnet
+```
+
+### mainnet
+
+```
+docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -rpcallowip=172.17.0.0/16 -rpcauth='foo:bar'
+```
