@@ -64,17 +64,17 @@ Two important notes:
 ### test
 
 ```
-docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -regtest=1
+docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core:latest -printtoconsole -regtest=1
 ```
 
 ### testnet
 
 ```
-docker run --name bitcoin-core --restart=unless-stopped -d -p 18332:18332 -p 18333:18333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -testnet
+docker run --name bitcoin-core --restart=unless-stopped -d -p 18332:18332 -p 18333:18333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core:latest -printtoconsole -testnet
 ```
 
 ### mainnet
 
 ```
-docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -rpcallowip=172.17.0.0/16 -rpcauth='foo:bar'
+docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core:latest -printtoconsole -rpcallowip=172.17.0.0/16 -rpcauth='foo:bar'
 ```
