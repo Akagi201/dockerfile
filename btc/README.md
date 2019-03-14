@@ -70,7 +70,7 @@ docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:
 ### testnet
 
 ```
-docker run --name bitcoin-core --restart=unless-stopped -d -p 8332:8332 -p 8333:8333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -testnet
+docker run --name bitcoin-core --restart=unless-stopped -d -p 18332:18332 -p 18333:18333 -v ~/bitcoin:/home/bitcoin/.bitcoin akagi201/bitcoin-core -printtoconsole -testnet
 ```
 
 ### mainnet
